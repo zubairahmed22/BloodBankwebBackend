@@ -11,7 +11,7 @@ const authRoutes =  require("./routes/auth");
 
 app.use(
     cors({
-      origin: ["*"],
+      origin: 'https://cozy-daifuku-9e69f1.netlify.app',
       methods: ["GET", "POST", "DELETE"],
       credentials: true,
       origin: true,
