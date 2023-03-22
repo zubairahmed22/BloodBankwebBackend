@@ -9,14 +9,7 @@ const path = require('path')
 const authRoutes =  require("./routes/auth");
 
 
-app.use(
-    cors({
-      origin: 'https://cozy-daifuku-9e69f1.netlify.app',
-      methods: ["GET", "POST", "DELETE"],
-      credentials: true,
-      origin: true,
-    })
-  );
+
 require('dotenv').config()
 mongoose.connect(process.env.DATABASE,
 
@@ -34,13 +27,7 @@ app.use(cookieParser());
 app.use(cors());
 
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    next();
-  });
+
 
 //My Routes
 app.use("",authRoutes)
